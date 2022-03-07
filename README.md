@@ -9,21 +9,31 @@ Adtraing of textcnn on THUCNews dataset
 
 
 三、试验结果
-model	PRECISION	RECALL	F1-macro
-baseline	0.9117	0.9116	0.9115
-PGD k=3	0.9145	0.9141	0.9140
-“Free”	0.9128	0.9119	0.9121
-FGSM 	0.9109	0.9107	0.9105
+model|	PRECISION|	RECALL|	F1-macro
+
+baseline|	0.9117|	0.9116|	0.9115
+
+PGD k=3|	0.9145|	0.9141|	0.9140
+
+“Free”|	0.9128|	0.9119|	0.9121
+
+FGSM| 	0.9109|	0.9107|	0.9105
 
 
 四、实验步骤
 Baseline:运行python run.py --model TextCNN
+
 PGD：运行python run.py --model TextCNN --adv PGD
+
 Free: 运行python run.py --model TextCNN --adv FreeAT
+
 FGSM 运行python run.py --model TextCNN --adv FGSM
 
 五、实验总结
 1、PGD、“Free”在baseline的基础上有了一定的提升
+
 2、FGSM在THUCNews数据上效果微弱于baseline
+
 3、不同的方法在不同的数据集上有不同的效果，在使用对抗方法时需要做进一步分析验证。
+
 4、本次时间因为时间原因，缺乏有效的参数调优时间，基于基础的参数可以看出，对抗方法可以有效的提升基准模型的性能，提升模型的泛化能力。
